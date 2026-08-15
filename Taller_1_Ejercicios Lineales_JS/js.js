@@ -14,10 +14,25 @@ let altura = Number( prompt("Ingrese la base del triangulo") );
 let area = ( base * altura ) / 2;
 alert("El area del triangulo es de "+area+" Resultado obtenido de su base "+base+" y su altura "+altura);
 
+//#3
+let numero1 = Number( prompt("Ingresa el primer numero") ); 
+let numero2 = Number( prompt("Ingresa el segundo numero") ); 
+let suma = numero1 + numero2;
+let resta = numero1 - numero2;
+let multiplicacion = numero1 * numero2;
+let division = numero1 / numero2;
+let modulo = numero1 % numero2;
+alert(
+    "Resultados:\n"
+    +"Suma: " + suma + "\n"
+    +"Resta: " + resta + "\n"
+    +"Multiplicación: " + multiplicacion + "\n"
+    +"División: " + division + "\n"
+    +"Módulo: " + modulo
+);
+
 /*
 
-3. Realiza las operaciones de suma, resta, multiplicación, división, y módulo pidiéndole solo
-2 números al usuario.
 4. Calcule el sueldo mensual de un trabajador ingresando el número de horas trabajadas en
 el mes y el valor tanto como de las horas normales de trabajo y las horas extras.
 5. Digita el ingreso del precio de un producto y se debe calcular el IVA, mostrar cuanto es el
