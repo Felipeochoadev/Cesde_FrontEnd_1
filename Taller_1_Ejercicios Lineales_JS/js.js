@@ -31,10 +31,16 @@ alert(
     +"Módulo: " + modulo
 );
 
+//#4
+let horasNormales = Number( prompt("Ingrese la cantidad de horas normales trabajadas en el mes") );
+let valorHoraNormal = Number( prompt("Ingrese el valor de la hora normal") );
+let horasExtras = Number( prompt("Ingrese la cantidad de horas extras trabajadas en el mes") );
+let valorHoraExtra = Number( prompt("Ingrese el valor de la hora extra") );
+let sueldoTotal = (horasNormales * valorHoraNormal) + (horasExtras * valorHoraExtra);
+alert("El sueldo mensual del trabajador es de " + sueldoTotal + ", calculado con " + horasNormales + " horas normales y " + horasExtras + " horas extras.");
+
 /*
 
-4. Calcule el sueldo mensual de un trabajador ingresando el número de horas trabajadas en
-el mes y el valor tanto como de las horas normales de trabajo y las horas extras.
 5. Digita el ingreso del precio de un producto y se debe calcular el IVA, mostrar cuanto es el
 IVA que se agrega, mostrar el precio del producto sin IVA y el total a pagar.
 6. Calcule el porcentaje de alumnos y alumnas de un salón de clase, digitando el total de
