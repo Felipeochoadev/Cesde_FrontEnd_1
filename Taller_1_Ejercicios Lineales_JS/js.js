@@ -10,7 +10,7 @@ alert("Su salario base es de "+salario+" pero tiene descuentos por salud del 4% 
 
 //#2
 let base = Number( prompt("Ingrese la base del triangulo") );
-let altura = Number( prompt("Ingrese la base del triangulo") );
+let altura = Number( prompt("Ingrese la altura del triangulo") );
 let area = ( base * altura ) / 2;
 alert("El area del triangulo es de "+area+" Resultado obtenido de su base "+base+" y su altura "+altura);
 
@@ -54,15 +54,17 @@ alert(
 let hombres = Number( prompt("Ingrese el total de alumnos hombres") );
 let mujeres = Number( prompt("Ingrese el total de alumnas mujeres") );
 let totalAlumnos = hombres + mujeres;
-let porcentajeHombres = Math.round((hombres / totalAlumnos) * 100);
-let porcentajeMujeres = Math.round((mujeres / totalAlumnos) * 100);
+let porcentajeHombres = Number((hombres / totalAlumnos) * 100).toFixed(2);
+let porcentajeMujeres = Number((mujeres / totalAlumnos) * 100).toFixed(2);
 alert(
     "Total de alumnos: " + totalAlumnos + "\n"
     +"Porcentaje de hombres: " + porcentajeHombres + "%\n"
     +"Porcentaje de mujeres: " + porcentajeMujeres + "%"
 );
 
-
-/*
-7. Calcule el promedio de 3 notas de un alumno, el rango de cada nota es del 1 al 5.
-*/
+//#7
+let nota1 = Number( prompt("Ingrese la primera nota (1 al 5)") );
+let nota2 = Number( prompt("Ingrese la segunda nota (1 al 5)") );
+let nota3 = Number( prompt("Ingrese la tercera nota (1 al 5)") );
+let promedio = Number( (nota1 + nota2 + nota3) / 3 ).toFixed(2);
+alert("El promedio de las notas (" + nota1 + ", " + nota2 + ", " + nota3 + ") es de " + promedio);
