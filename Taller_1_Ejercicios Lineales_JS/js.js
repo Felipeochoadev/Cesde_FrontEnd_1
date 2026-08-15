@@ -39,10 +39,19 @@ let valorHoraExtra = Number( prompt("Ingrese el valor de la hora extra") );
 let sueldoTotal = (horasNormales * valorHoraNormal) + (horasExtras * valorHoraExtra);
 alert("El sueldo mensual del trabajador es de " + sueldoTotal + ", calculado con " + horasNormales + " horas normales y " + horasExtras + " horas extras.");
 
+//#5
+let precioBase = Number( prompt("Ingrese el precio base del producto") );
+let porcentajeIva = 19;
+let valorIva = precioBase * (porcentajeIva / 100);
+let totalPagar = precioBase + valorIva;
+alert(
+    "Precio sin IVA: " + precioBase + "\n"
+    +"Valor del IVA (" + porcentajeIva + "%): " + valorIva + "\n"
+    +"Total a pagar: " + totalPagar
+);
+
 /*
 
-5. Digita el ingreso del precio de un producto y se debe calcular el IVA, mostrar cuanto es el
-IVA que se agrega, mostrar el precio del producto sin IVA y el total a pagar.
 6. Calcule el porcentaje de alumnos y alumnas de un salón de clase, digitando el total de
 alumnos hombres y mujeres.
 7. Calcule el promedio de 3 notas de un alumno, el rango de cada nota es del 1 al 5.
