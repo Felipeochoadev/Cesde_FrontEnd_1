@@ -1,0 +1,1 @@
+let salario = Number( prompt("Salario base") );

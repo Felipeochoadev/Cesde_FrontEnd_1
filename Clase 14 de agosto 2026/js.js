@@ -29,3 +29,7 @@ if( numero > 0 && (numero % 2) == 0){
 } else {
      alert("El numero "+numero+" es neutro");
 }
+
+//switch() case, break, default
+
+//if ternario () ? true : false
