@@ -50,9 +50,19 @@ alert(
     +"Total a pagar: " + totalPagar
 );
 
-/*
+//#6
+let hombres = Number( prompt("Ingrese el total de alumnos hombres") );
+let mujeres = Number( prompt("Ingrese el total de alumnas mujeres") );
+let totalAlumnos = hombres + mujeres;
+let porcentajeHombres = Math.round((hombres / totalAlumnos) * 100);
+let porcentajeMujeres = Math.round((mujeres / totalAlumnos) * 100);
+alert(
+    "Total de alumnos: " + totalAlumnos + "\n"
+    +"Porcentaje de hombres: " + porcentajeHombres + "%\n"
+    +"Porcentaje de mujeres: " + porcentajeMujeres + "%"
+);
 
-6. Calcule el porcentaje de alumnos y alumnas de un salón de clase, digitando el total de
-alumnos hombres y mujeres.
+
+/*
 7. Calcule el promedio de 3 notas de un alumno, el rango de cada nota es del 1 al 5.
 */
