@@ -1,7 +1,7 @@
 //Ejercicios condicionales.
 
 //#1
-let numero = number(prompt("Ingrese un número:"));
+let numero = Number(prompt("Ingrese un número:"));
 
 if ( (numero % 2) === 0 && numero < 0) {
    alert("El número es par y negativo");
@@ -14,8 +14,8 @@ if ( (numero % 2) === 0 && numero < 0) {
 }
 
 //#2
-let numero1 = number(prompt("Ingrese un número:"));
-let numero2 = number(prompt("Ingrese otro número:"));
+let numero1 = Number(prompt("Ingrese un número:"));
+let numero2 = Number(prompt("Ingrese otro número:"));
 
 if (numero1 > numero2) {
    alert("El número mayor es: " + numero1 + " y el número menor es: " + numero2);
@@ -26,7 +26,7 @@ if (numero1 > numero2) {
 }
 
 //#3
-let dia = number(prompt("Ingrese un número del 1 al 7:"));
+let dia = Number(prompt("Ingrese un número del 1 al 7:"));
 
 if (dia === 1) {
    alert("El día de la semana es: Lunes");
@@ -47,7 +47,7 @@ if (dia === 1) {
 }
 
 //#4
-let edad = number(prompt("Ingrese su edad:"));
+let edad = Number(prompt("Ingrese su edad:"));
 
 if (edad < 18) {
    alert("La persona es un adolescente");
@@ -60,9 +60,9 @@ if (edad < 18) {
 }
 
 //#5
-let producto1 = number(prompt("Ingrese el valor del primer producto:"));
-let producto2 = number(prompt("Ingrese el valor del segundo producto:"));
-let producto3 = number(prompt("Ingrese el valor del tercer producto:"));
+let producto1 = Number(prompt("Ingrese el valor del primer producto:"));
+let producto2 = Number(prompt("Ingrese el valor del segundo producto:"));
+let producto3 = Number(prompt("Ingrese el valor del tercer producto:"));
 let total = producto1 + producto2 + producto3;
 let metodoPago = prompt("Ingrese el método de pago (efectivo, cupón, crédito):").toLowerCase();
 
@@ -97,3 +97,63 @@ if (promedio < 2.0) {
 } else {
    alert("El nivel del alumno es: Muy bueno");
 }
+
+//#7
+let diaNacimiento = parseInt(prompt("Ingrese el día de nacimiento (1-31):"));
+let mesNacimiento = parseInt(prompt("Ingrese el mes de nacimiento (1-12):"));
+let anioNacimiento = parseInt(prompt("Ingrese el año de nacimiento (YYYY):"));
+let fechaNacimiento = new Date(anioNacimiento, mesNacimiento - 1, diaNacimiento);
+//Se coloca mes - 1 porque en JavaScript los meses van de 0 a 11 (enero es 0, febrero es 1, etc.)
+
+let fechaActual = new Date();
+let Laedad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+alert("La edad actual de la persona es: " + Laedad + " años");
+
+//#8
+let diasHospitalizacion = parseInt(prompt("Ingrese la cantidad de días de hospitalización:"));
+let edadPaciente = parseInt(prompt("Ingrese la edad del paciente:"));
+let totalPagar;
+let valorRecargo = 0;
+let valorCosto = 0;
+
+if(diasHospitalizacion <= 1) {
+   valorCosto = 20000;
+} else if(diasHospitalizacion >= 2 && diasHospitalizacion <= 4) {
+   valorCosto = 30000;
+} else if(diasHospitalizacion >= 5 && diasHospitalizacion <= 7) {
+   valorCosto = 25000;
+} else if(diasHospitalizacion >= 8) {
+   valorCosto = 15000;
+}
+
+if (edadPaciente >= 0 && edadPaciente <= 10) {
+   if (diasHospitalizacion >= 5 && diasHospitalizacion <= 7) {
+      valorRecargo = valorCosto * 0.05;
+   } else if (diasHospitalizacion >= 8) {
+      valorRecargo = valorCosto * 0.10;
+   }
+} else if(edadPaciente >= 11 && edadPaciente <= 17) {
+    if (diasHospitalizacion >= 8) {
+        valorRecargo = valorCosto * 0.10;
+    }
+} else if (edadPaciente >= 18 && edadPaciente <= 49) {
+   if (diasHospitalizacion >= 8) {
+      valorRecargo = valorCosto * 0.15;
+   }
+} else if (edadPaciente >= 50) {
+   if (diasHospitalizacion >= 5 && diasHospitalizacion <= 7) {
+      valorRecargo = valorCosto * 0.15;
+   } else if (diasHospitalizacion >= 8) {
+      valorRecargo = valorCosto * 0.20;
+   }
+}
+
+totalPagar = (valorCosto * diasHospitalizacion) + valorRecargo;
+
+alert(
+   "Días de hospitalización: " + diasHospitalizacion + 
+   "\nEdad del paciente: " + edadPaciente +
+   "\nValor del día según la tabla: $" + valorCosto + 
+   "\nValor del recargo: $" + valorRecargo + 
+   "\nTotal a pagar: $" + totalPagar
+);
