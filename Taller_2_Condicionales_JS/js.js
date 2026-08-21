@@ -25,3 +25,36 @@ if (numero1 > numero2) {
    alert("Los números son iguales");
 }
 
+//#3
+let dia = number(prompt("Ingrese un número del 1 al 7:"));
+
+if (dia === 1) {
+   alert("El día de la semana es: Lunes");
+} else if (dia === 2) {
+   alert("El día de la semana es: Martes");
+} else if (dia === 3) {
+   alert("El día de la semana es: Miércoles");
+} else if (dia === 4) {
+   alert("El día de la semana es: Jueves");
+} else if (dia === 5) {
+   alert("El día de la semana es: Viernes");
+} else if (dia === 6) {
+   alert("El día de la semana es: Sábado");
+} else if (dia === 7) {
+   alert("El día de la semana es: Domingo");
+} else {
+   alert("Número no válido. Ingrese un número del 1 al 7.");
+}
+
+//#4
+let edad = number(prompt("Ingrese su edad:"));
+
+if (edad < 18) {
+   alert("La persona es un adolescente");
+} else if (edad >= 18 && edad <= 28) {
+   alert("La persona es un adulto adolescente");
+} else if (edad >= 29 && edad <= 49) {
+   alert("La persona es un adulto");
+} else {
+   alert("La persona es un adulto mayor");
+}
