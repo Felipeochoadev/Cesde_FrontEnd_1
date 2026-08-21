@@ -58,3 +58,42 @@ if (edad < 18) {
 } else {
    alert("La persona es un adulto mayor");
 }
+
+//#5
+let producto1 = number(prompt("Ingrese el valor del primer producto:"));
+let producto2 = number(prompt("Ingrese el valor del segundo producto:"));
+let producto3 = number(prompt("Ingrese el valor del tercer producto:"));
+let total = producto1 + producto2 + producto3;
+let metodoPago = prompt("Ingrese el método de pago (efectivo, cupón, crédito):").toLowerCase();
+
+if (metodoPago === "efectivo") {
+   alert("El total a pagar es: $" + total);
+} else if (metodoPago === "cupón") {
+   let descuento = total * 0.03;
+   let totalConDescuento = total - descuento;
+   alert("El total a pagar con descuento es: $" + totalConDescuento);
+} else if (metodoPago === "crédito") {
+   let aumento = total * 0.05;
+   let totalConAumento = total + aumento;
+   alert("El total a pagar con aumento es: $" + totalConAumento);
+} else {
+   alert("Método de pago no válido.");
+}
+
+//#6
+let nota1 = parseFloat(prompt("Ingrese la primera nota:"));
+let nota2 = parseFloat(prompt("Ingrese la segunda nota:"));
+let nota3 = parseFloat(prompt("Ingrese la tercera nota:"));
+let promedio = (nota1 + nota2 + nota3) / 3;
+
+if (promedio < 2.0) {
+   alert("El nivel del alumno es: Malo");
+} else if (promedio < 2.9) {
+   alert("El nivel del alumno es: Debe recuperar");
+} else if (promedio >= 3.0 && promedio <= 3.9) {
+   alert("El nivel del alumno es: Regular");
+} else if (promedio >= 4.0 && promedio <= 4.4) {
+   alert("El nivel del alumno es: Bueno");
+} else {
+   alert("El nivel del alumno es: Muy bueno");
+}
