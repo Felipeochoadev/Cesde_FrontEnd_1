@@ -37,15 +37,27 @@ document.write("<hr>");
 // document.write("<hr>");
 
 //variables contadoras y acumuladoras
-let numero = Number(prompt("Ingrese total de numeros:"));
-let num;
-let suma = 0;
-let totalNum = 0;
-for (let i = 1; i <= numero; i++) {
-    num = Number(prompt("Ingrese el numero para este ciclo (" + i + "):"));
-    document.write(num+ " ");
-    suma += num;
-    totalNum++;
+// let numero = Number(prompt("Ingrese total de numeros:"));
+// let num;
+// let suma = 0;
+// let totalNum = 0;
+// for (let i = 1; i <= numero; i++) {
+//     num = Number(prompt("Ingrese el numero para este ciclo (" + i + "):"));
+//     document.write(num+ " ");
+//     suma += num;
+//     totalNum++;
+// }
+// document.write("<br>La suma de los numeros es: " + suma);
+// document.write("<br>El total de numeros ingresados es: " + totalNum);
+
+//ciclos animados
+
+let temporadas = Number(prompt("Ingrese el total de temporadas de la serie:"));
+let capitulos = Number(prompt("Ingrese el total de capitulos de la temporada"));
+
+for (let i = 1; i <= temporadas; i++) {
+    document.write("<h1>Temporada " + i + "</h1>");
+    for (let j = 1; j <= capitulos; j++) {
+        document.write("<h3>Capitulo " + j + "</h3>");
+    }
 }
-document.write("<br>La suma de los numeros es: " + suma);
-document.write("<br>El total de numeros ingresados es: " + totalNum);
