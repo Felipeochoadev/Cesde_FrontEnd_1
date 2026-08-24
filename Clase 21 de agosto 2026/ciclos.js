@@ -60,4 +60,5 @@ for (let i = 1; i <= temporadas; i++) {
     for (let j = 1; j <= capitulos; j++) {
         document.write("<h3>Capitulo " + j + "</h3>");
     }
+    document.write("<hr>");
 }
