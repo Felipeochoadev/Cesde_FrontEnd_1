@@ -74,3 +74,27 @@ for (let i = 30; i >= 1; i--) {
 }
 
 alert(tablaDescendente);
+
+
+// #6
+let intervalo = parseInt(prompt("Ingrese el número del intervalo para contar del 1 al 30:"));
+let conteoIntervalo = "Conteo del 1 al 30 con intervalo de " + intervalo + ":\n";
+
+for (let i = 1; i <= 30; i += intervalo) {
+    conteoIntervalo += i + " ";
+}
+
+alert(conteoIntervalo);
+
+
+// #7
+let intervaloRegresivo = parseInt(prompt("Ingrese el número del intervalo para contar regresivamente del 30 al 1:"));
+let conteoRegresivo = "Conteo regresivo del 30 al 1 con intervalo de " + intervaloRegresivo + ":\n";
+
+for (let i = 30; i >= 1; i -= intervaloRegresivo) {
+    conteoRegresivo += i + " ";
+}
+
+alert(conteoRegresivo);
+
+
