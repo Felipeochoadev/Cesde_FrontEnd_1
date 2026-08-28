@@ -98,3 +98,56 @@ for (let i = 30; i >= 1; i -= intervaloRegresivo) {
 alert(conteoRegresivo);
 
 
+// #8
+let mayoresEdad = 0;
+let menoresEdad = 0;
+let listaMayores = [];
+let listaMenores = [];
+
+for (let i = 1; i <= 10; i++) {
+    let edad = parseInt(prompt("Ingrese la edad del estudiante " + i + " de 10:"));
+    
+    if (edad >= 18) {
+        mayoresEdad++;
+        listaMayores.push("Estudiante " + i + " (" + edad + " años)");
+    } else {
+        menoresEdad++;
+        listaMenores.push("Estudiante " + i + " (" + edad + " años)");
+    }
+}
+
+alert(
+    "Resultados de los 10 estudiantes:\n\n" +
+    "Cantidad de mayores de edad: " + mayoresEdad + "\n" +
+    "Cuáles son mayores: " + (listaMayores.length > 0 ? listaMayores.join(", ") : "Ninguno") + "\n\n" +
+    "Cantidad de menores de edad: " + menoresEdad + "\n" +
+    "Cuáles son menores: " + (listaMenores.length > 0 ? listaMenores.join(", ") : "Ninguno")
+);
+
+
+// #9
+let numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+let acertado = false;
+let maxIntentos = 3;
+
+alert("¡Juego de adivinar el número!\nHe generado un número aleatorio entre 1 y 10. Tienes 3 intentos para acertar.");
+
+for (let intento = 1; intento <= maxIntentos; intento++) {
+    let intentoUsuario = parseInt(prompt("Intento " + intento + " de " + maxIntentos + ":\n¿Cuál crees que es el número? (del 1 al 10):"));
+    
+    if (intentoUsuario === numeroAleatorio) {
+        alert("¡Felicitaciones! ¡Acertaste el número " + numeroAleatorio + " en el intento " + intento + "!");
+        acertado = true;
+        break;
+    } else {
+        let intentosRestantes = maxIntentos - intento;
+        if (intentosRestantes > 0) {
+            let pista = intentoUsuario < numeroAleatorio ? "El número es MAYOR." : "El número es MENOR.";
+            alert("No acertaste. Pista: " + pista + "\nTe quedan " + intentosRestantes + " intento(s).");
+        }
+    }
+}
+
+if (!acertado) {
+    alert("Se acabaron tus intentos. El número aleatorio era: " + numeroAleatorio);
+}
