@@ -1,34 +1,51 @@
-let Arreglo = [];
-let NumeroMayor = 0;
-let NumeroMenor = 0;
-let NumerosTotal = 0;
-let NumerosPromedio = 0;
-let CantidadRecorrido = Number(prompt("Ingrese un numero que es la cantidad de veces que se va a recorrer el ciclo"))
+let DiaSemana = Number(prompt("Eligue un dia de la semana:\n 1 - Lunes\n 2 - Martes\n 3 - Miercoles\n 4 - Juevez\n 5 - Viernes"));
+let NumeroPicoPlaca = null;
+let DiaSem = "";
+switch (DiaSemana) {
+    case 1:
+        NumeroPicoPlaca = [0,1,2,3];
+        DiaSem = "Lunes";
+        break;
+    case 2:
+        NumeroPicoPlaca = [4,5,6,7];
+        DiaSem = "Martes";
+        break
+    case 3:
+        NumeroPicoPlaca = [8,9,0,1];
+        DiaSem = "Miercoles";
+        break
+    case 4:
+        NumeroPicoPlaca = [2,3,4,5];
+        DiaSem = "Jueves";
+        break
+    case 5:
+        NumeroPicoPlaca = [6,7,8,9];
+        DiaSem = "Viernes";
+        break
 
-for (let i = 0; i < CantidadRecorrido; i++) {
-    let NumeroAleatoreo = Math.floor(Math.random() * 100) + 1;
-    NumerosTotal += NumeroAleatoreo;
-    if (i == 0) {
-        NumeroMayor = NumeroAleatoreo;
-        NumeroMenor = NumeroAleatoreo;
-        NumerosPromedio = NumeroAleatoreo;
-    } else {
-        if (NumeroAleatoreo > NumeroMayor) {
-            NumeroMayor = NumeroAleatoreo;
-        }
-        if(NumeroAleatoreo < NumeroMenor){
-            NumeroMenor = NumeroAleatoreo;
-        }
+    default:
+        document.write("Opcion incorrecta");
+        break;
+}
+let TienePicoPlaca = false;
+let UltimoDigito = Number(prompt("Ingrese el ultimo digito de la placa opciones de 0-9"));
+if( UltimoDigito > 9 || UltimoDigito < 0){
+    document.write("Ultimo digito incorrecto");
+} else {
+    for (let i = 0; i < NumeroPicoPlaca.length; i++) {
+        const PicoPlaca = NumeroPicoPlaca[i];
+        if(PicoPlaca == UltimoDigito) TienePicoPlaca = true;
     }
-    Arreglo.push(NumeroAleatoreo);
+    if(TienePicoPlaca){
+        document.write("La placa <b>"+ UltimoDigito + "</b> Tiene pico y placa el dia "+DiaSem);
+    } else {
+        document.write("La placa <b>"+ UltimoDigito + "</b> <b>NO</b> Tiene pico y placa el dia "+DiaSem);
+    }
 }
 
-document.write(""+
-    "<b>Arreglo de 5 numeros aleatoreos:</b> "+ Arreglo + "<br>"+
-    "<b>Numero mayor:</b> "+ NumeroMayor + "<br>"+
-    "<b>Numero menor:</b> "+ NumeroMenor + "<br>"+
-    "<b>Promedio es:</b> "+ (NumerosTotal/CantidadRecorrido).toFixed(2) + "<br>"+
-"");
+
+
+
 
 const estudiantes = [
     {
