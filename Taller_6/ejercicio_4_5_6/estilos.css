@@ -1,0 +1,37 @@
+/* ==========================================
+   Taller #1 DOM - Nodos: Estilos CSS
+   Ejercicios 4, 5 y 6
+   ========================================== */
+
+/* Estilo para el h2 con color y letra en cursiva (Ejercicio 5) */
+.h2-estilo {
+    color: #8e44ad;
+    font-style: italic;
+}
+
+/* Clase cumplido: color de fondo verde (Ejercicio 6) */
+.cumplido {
+    background-color: #27ae60;
+    color: #ffffff;
+    padding: 6px 10px;
+    margin: 4px 0;
+    border-radius: 4px;
+    list-style-position: inside;
+}
+
+/* Clase fallido: color de fondo rojo (Ejercicio 6) */
+.fallido {
+    background-color: #c0392b;
+    color: #ffffff;
+    padding: 6px 10px;
+    margin: 4px 0;
+    border-radius: 4px;
+    list-style-position: inside;
+}
+
+/* Estilo general para la clase listado */
+.listado {
+    font-family: Arial, sans-serif;
+    max-width: 350px;
+    padding-left: 20px;
+}
