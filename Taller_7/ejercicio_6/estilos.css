@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9fa;
+    padding: 30px;
+    margin: 0;
+}
+
+.card {
+    background-color: #fff;
+    max-width: 450px;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+select.nieve {
+    margin-top: 8px;
+    display: block;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+select.nieve:focus {
+    border-color: #3498db;
+}
+
+.resultado {
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #2c3e50;
+    min-height: 24px;
+}

@@ -1,0 +1,34 @@
+body {
+ padding-left: 20%;
+}
+
+.tomador {
+    background: red;
+    padding: 1em;
+    color: white;
+    width: 60%;
+
+}
+
+.tomador input {
+    width: 100%;
+    height: 2em;
+}
+
+.tomador button {
+    margin-top: 0.5em;
+    background: green;
+    padding: 0.5em;
+    border-color: solid 01.em white;
+    color: white;
+}
+
+.listado {
+    width: 63.5%;
+    margin-top: 1em;
+}
+
+.listado thead {
+    background-color: red;
+    color: white;
+}

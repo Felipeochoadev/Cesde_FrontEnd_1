@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;  
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+
+.navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.navbar .icon {
+  display: none;
+}
+
+/* Cuando la pantalla tiene un ancho menor o igual a 600px */
+@media screen and (max-width: 600px) {
+  /* Oculta todos los enlaces excepto el primero (Home) */
+  .navbar a:not(:first-child) {
+    display: none;
+  }
+  /* Muestra el icono hamburguesa a la derecha */
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* Estado responsivo cuando el usuario hace clic en el icono */
+@media screen and (max-width: 600px) {
+  .navbar.responsive {
+    position: relative;
+  }
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.content {
+  padding-left: 16px;
+  padding-top: 60px;
+}
