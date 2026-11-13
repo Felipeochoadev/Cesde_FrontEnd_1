@@ -10,7 +10,7 @@
 <body>
     
 
-    <div class="container">
+    <div class="container my-4">
         <div class="row justify-content-center">
             <!-- Titulo -->
             <div class="col-12">
@@ -21,7 +21,7 @@
                 <form>
                     <div class="mb-3">
                         <label for="nombre-pro" class="form-label">Nombre Producto</label>
-                        <input type="email" class="form-control" id="nombre-pro">
+                        <input type="text" class="form-control" id="nombre-pro">
                     </div>
                     <div class="mb-3">
                         <label for="precio-pro" class="form-label">precio producto</label>
@@ -35,11 +35,30 @@
                         <label for="imagen-pro" class="form-label">imagen Producto</label>
                         <input type="url" class="form-control" id="imagen-pro">
                     </div>
-                    <button type="button" class="btn btn-primary btn-guardar">Guardar Producto</button>
+                    <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-primary btn-guardar">Guardar Producto</button>
+                        <button type="button" class="btn btn-secondary btn-cancelar d-none">Cancelar</button>
+                    </div>
                 </form>
             </div>
              <!-- Listado -->
-            <div class="col-8"></div>
+            <div class="col-10 mt-4">
+                <table class="table table-bordered table-striped table-hover text-center align-middle">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>#</th>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpotabla">
+                        <!-- Filas dinámicas -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     

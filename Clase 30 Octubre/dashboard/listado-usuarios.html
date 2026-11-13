@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin - Usuarios</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Tienda</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Módulos
+            </div>
+
+            <!-- Nav Item - Productos -->
+            <li class="nav-item" id="nav-item-productos">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProductos"
+                    aria-expanded="false" aria-controls="collapseProductos">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Productos</span>
+                </a>
+                <div id="collapseProductos" class="collapse" aria-labelledby="headingProductos" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-pro.html">Ver Productos</a>
+                        <a class="collapse-item" href="crear-pro.html">Crear Productos</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Clientes -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClientes"
+                    aria-expanded="false" aria-controls="collapseClientes">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Clientes</span>
+                </a>
+                <div id="collapseClientes" class="collapse" aria-labelledby="headingClientes" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-clientes.html">Ver Clientes</a>
+                        <a class="collapse-item" href="crear-cliente.html">Crear Clientes</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pedidos -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePedidos"
+                    aria-expanded="false" aria-controls="collapsePedidos">
+                    <i class="fas fa-fw fa-shopping-cart"></i>
+                    <span>Pedidos</span>
+                </a>
+                <div id="collapsePedidos" class="collapse" aria-labelledby="headingPedidos" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-pedidos.html">Ver Pedidos</a>
+                        <a class="collapse-item" href="crear-pedido.html">Crear Pedidos</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Usuarios -->
+            <li class="nav-item" id="nav-item-usuarios">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsuarios"
+                    aria-expanded="true" aria-controls="collapseUsuarios">
+                    <i class="fas fa-fw fa-user-tie"></i>
+                    <span>Usuarios</span>
+                </a>
+                <div id="collapseUsuarios" class="collapse show" aria-labelledby="headingUsuarios" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item active" href="listado-usuarios.html">Ver Usuarios</a>
+                        <a class="collapse-item" href="crear-usuario.html">Crear Usuarios</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                        
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="listado-usuarios.html">
+                                    <i class="fas fa-users-cog fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Gestión de Usuarios
+                                </a>
+                                <a class="dropdown-item" href="../front/index.html" target="_blank">
+                                    <i class="fas fa-store fa-sm fa-fw mr-2 text-success"></i>
+                                    Ir a la Tienda Online
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="login.html" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-danger"></i>
+                                    Cerrar Sesión / Cambiar Rol
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Listado de Usuarios</h1>
+                        <a href="crear-usuario.html" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-plus fa-sm text-white-50"></i> Crear Usuario</a>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+                         <!--================== tabla aqui ===========================--> 
+                         <div class="col-12 mb-3">
+                             <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                 <div class="input-group rounded-pill overflow-hidden border" style="max-width: 450px;">
+                                    <span class="input-group-text bg-white border-0 pe-1" id="basic-addon1">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                      </svg>
+                                    </span>
+                                    <input type="search" id="inputBuscarUsr" class="form-control hide-focus border-0" placeholder="Buscar por usuario, nombre, rol o email..." aria-label="Buscar Usuario" aria-describedby="basic-addon1">
+                                  </div> 
+                                  <div class="text-muted small mt-2 mt-sm-0">
+                                      Total de usuarios: <strong id="total-usr-count">0</strong>
+                                  </div>
+                             </div>
+                         </div>
+
+                         <div class="col-12 table-responsive">
+                             <table class="table align-middle mb-0 bg-white shadow-sm border rounded">
+                                <thead class="bg-light text-dark">
+                                  <tr>
+                                    <th style="width: 50px;">#</th>
+                                    <th>Usuario</th>
+                                    <th>Nombre Completo</th>
+                                    <th>Correo Electrónico</th>
+                                    <th>Rol</th>
+                                    <th>Creado</th>
+                                    <th style="width: 130px;" class="text-center">Acciones</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="tabla-usuarios">
+                                  
+                                </tbody>
+                              </table>
+                         </div>
+                    </div>
+
+                    <!-- Content Row -->
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Tienda de Comidas 2026</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/db.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const usuarioActivo = obtenerUsuarioActivo();
+            if (usuarioActivo && usuarioActivo.rol === "vendedor") return;
+            const tablaCuerpo = document.querySelector("#tabla-usuarios");
+            const inputBuscar = document.querySelector("#inputBuscarUsr");
+            const totalCount = document.querySelector("#total-usr-count");
+
+            function renderizarUsuarios(filtro = "") {
+                const usuarios = obtenerUsuarios();
+                const usuarioActivo = obtenerUsuarioActivo() || { rol: "administrador" };
+                const esAdmin = usuarioActivo.rol === "administrador";
+
+                const textoFiltro = filtro.toLowerCase().trim();
+                const filtrados = usuarios.filter(u => 
+                    (u.usuario && u.usuario.toLowerCase().includes(textoFiltro)) ||
+                    (u.nombre && u.nombre.toLowerCase().includes(textoFiltro)) ||
+                    (u.email && u.email.toLowerCase().includes(textoFiltro)) ||
+                    (u.rol && u.rol.toLowerCase().includes(textoFiltro))
+                );
+
+                if (totalCount) totalCount.textContent = filtrados.length;
+
+                tablaCuerpo.innerHTML = "";
+
+                if (filtrados.length === 0) {
+                    tablaCuerpo.innerHTML = `
+                        <tr>
+                            <td colspan="7" class="text-center py-4 text-muted">
+                                <i class="fas fa-user-slash fa-2x mb-2 d-block text-gray-400"></i>
+                                No se encontraron usuarios que coincidan con la búsqueda.
+                            </td>
+                        </tr>
+                    `;
+                    return;
+                }
+
+                filtrados.forEach((u, index) => {
+                    const idMostrar = (u.id !== undefined && u.id !== null) ? u.id : (index + 1);
+                    const rolRaw = (u.rol || (u.usuario && u.usuario.toLowerCase().includes('admin') ? 'administrador' : 'vendedor')).toLowerCase();
+                    const esAdminRol = rolRaw === "administrador";
+                    const badgeRol = esAdminRol ? "badge-danger" : "badge-warning";
+                    const rolTexto = esAdminRol ? "Administrador" : "Vendedor";
+                    const esElMismo = usuarioActivo.id == idMostrar || usuarioActivo.usuario === u.usuario;
+
+                    const tr = document.createElement("tr");
+                    tr.innerHTML = `
+                        <td class="font-weight-bold">${idMostrar}</td>
+                        <td class="font-weight-bold text-dark">
+                            <i class="fas fa-user-circle mr-1 text-gray-400"></i>${u.usuario || 'usuario'}
+                            ${esElMismo ? '<span class="badge badge-success ml-1">Tú</span>' : ''}
+                        </td>
+                        <td>${u.nombre || u.usuario || ('Usuario ' + idMostrar)}</td>
+                        <td>
+                            <a href="mailto:${u.email || ''}" class="text-primary text-decoration-none small">
+                                ${u.email || (u.usuario + '@tienda.com')}
+                            </a>
+                        </td>
+                        <td>
+                            <span class="badge ${badgeRol} text-uppercase px-2 py-1">${rolTexto}</span>
+                        </td>
+                        <td class="small text-muted">${u.creado || '2026-10-30'}</td>
+                        <td class="text-center">
+                            <div class="btn-group btn-group-sm" role="group">
+                                <a href="crear-usuario.html?id=${idMostrar}" class="btn btn-info" title="Editar Usuario">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <button type="button" class="btn btn-danger btn-eliminar" data-id="${idMostrar}" data-usr="${u.usuario}"
+                                    ${!esAdmin || esElMismo ? 'disabled style="opacity: 0.4; cursor: not-allowed;"' : ''}
+                                    title="${esElMismo ? 'No puedes eliminarte a ti mismo' : (!esAdmin ? 'Acción restringida: Solo administradores pueden eliminar' : 'Eliminar Usuario')}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    `;
+                    tablaCuerpo.appendChild(tr);
+                });
+            }
+
+            // Delegación de eventos para eliminar
+            tablaCuerpo.addEventListener("click", (e) => {
+                const btnEliminar = e.target.closest(".btn-eliminar");
+                if (btnEliminar) {
+                    if (!verificarPermisoEliminar()) {
+                        return;
+                    }
+
+                    const id = btnEliminar.getAttribute("data-id");
+                    const usr = btnEliminar.getAttribute("data-usr");
+                    const usuarioActivo = obtenerUsuarioActivo();
+
+                    if (usuarioActivo && (usuarioActivo.id == id || usuarioActivo.usuario === usr)) {
+                        mostrarNotificacion("No puedes eliminar el usuario con el que actualmente has iniciado sesión.", "danger");
+                        return;
+                    }
+
+                    if (confirm(`¿Estás seguro de que deseas eliminar al usuario "${usr}"?`)) {
+                        let usuarios = obtenerUsuarios();
+                        usuarios = usuarios.filter(u => u.id != id);
+                        guardarUsuarios(usuarios);
+                        mostrarNotificacion(`Usuario "${usr}" eliminado exitosamente.`, "success");
+                        renderizarUsuarios(inputBuscar.value);
+                    }
+                }
+            });
+
+            // Filtro en tiempo real
+            inputBuscar.addEventListener("input", (e) => {
+                renderizarUsuarios(e.target.value);
+            });
+
+            // Renderizado inicial
+            renderizarUsuarios();
+        });
+    </script>
+
+</body>
+
+</html>

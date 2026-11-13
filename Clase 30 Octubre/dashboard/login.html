@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Inventario - Iniciar Sesión</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=700&q=80'); background-size: cover; background-position: center;"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-2 font-weight-bold">¡Bienvenido de Nuevo!</h1>
+                                        <p class="text-muted small mb-3">Selecciona el rol con el que deseas ingresar al sistema</p>
+                                    </div>
+
+                                    <form class="user" id="form-login">
+                                        <!-- Selector de Rol para Iniciar Sesión -->
+                                        <div class="mb-4">
+                                            <div class="btn-group btn-group-toggle w-100 shadow-sm" data-toggle="buttons">
+                                                <label class="btn btn-outline-danger active py-2 font-weight-bold w-50" id="btn-rol-admin">
+                                                    <input type="radio" name="optionsRol" id="radio-admin" checked>
+                                                    <i class="fas fa-user-shield mr-1"></i> Admin
+                                                </label>
+                                                <label class="btn btn-outline-warning text-dark py-2 font-weight-bold w-50" id="btn-rol-vendedor">
+                                                    <input type="radio" name="optionsRol" id="radio-vendedor">
+                                                    <i class="fas fa-user-tag mr-1"></i> Vendedor
+                                                </label>
+                                            </div>
+                                            <div class="text-center mt-2">
+                                                <small class="text-muted font-italic" id="info-rol-seleccionado">
+                                                    <i class="fas fa-info-circle text-danger mr-1"></i> Modo Administrador: Acceso total (Crear, Extraer, Editar y Eliminar).
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="inputUsuario"
+                                                placeholder="Usuario o Correo Electrónico" value="admin" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                id="inputContrasena" placeholder="Contraseña" value="admin123" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck" checked>
+                                                <label class="custom-control-label" for="customCheck">Recordarme</label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block font-weight-bold shadow-sm py-2">
+                                            <i class="fas fa-sign-in-alt mr-1"></i> Iniciar Sesión
+                                        </button>
+                                    </form>
+
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small font-weight-bold text-success" href="../front/index.html">
+                                            <i class="fas fa-store mr-1"></i> Ir a la Tienda Online
+                                        </a>
+                                    </div>
+                                    <div class="text-center mt-2">
+                                        <a class="small" href="register.html">¿No tienes cuenta? ¡Regístrate aquí!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/db.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const formLogin = document.querySelector("#form-login");
+            const inputUsuario = document.querySelector("#inputUsuario");
+            const inputContrasena = document.querySelector("#inputContrasena");
+            const btnRolAdmin = document.querySelector("#btn-rol-admin");
+            const btnRolVendedor = document.querySelector("#btn-rol-vendedor");
+            const infoRol = document.querySelector("#info-rol-seleccionado");
+
+            let rolSeleccionado = "administrador";
+
+            // Evento selección de rol Administrador
+            btnRolAdmin.addEventListener("click", () => {
+                rolSeleccionado = "administrador";
+                btnRolAdmin.classList.add("active");
+                btnRolVendedor.classList.remove("active");
+
+                infoRol.innerHTML = `<i class="fas fa-info-circle text-danger mr-1"></i> Modo Administrador: Acceso total (Crear, Extraer, Editar y Eliminar).`;
+
+                // Cargar usuario administrador por defecto
+                inputUsuario.value = "admin";
+                inputContrasena.value = "admin123";
+            });
+
+            // Evento selección de rol Vendedor
+            btnRolVendedor.addEventListener("click", () => {
+                rolSeleccionado = "vendedor";
+                btnRolVendedor.classList.add("active");
+                btnRolAdmin.classList.remove("active");
+
+                infoRol.innerHTML = `<i class="fas fa-info-circle text-warning mr-1"></i> Modo Vendedor: Gestión de Clientes y Pedidos (Crear, Extraer y Editar). Productos y Usuarios reservados para Administrador.`;
+
+                // Cargar usuario vendedor por defecto (admite tanto vendedor como felipe)
+                const usuarios = obtenerUsuarios();
+                const usuarioVendedor = usuarios.find(u => u.rol === "vendedor") || { usuario: "felipe", contrasena: "pipe" };
+                inputUsuario.value = usuarioVendedor.usuario;
+                inputContrasena.value = usuarioVendedor.contrasena || "pipe";
+            });
+
+            function autenticar(usuario, pass) {
+                const usuarios = obtenerUsuarios();
+
+                // 1. Buscar coincidencia exacta por credenciales
+                let encontrado = usuarios.find(u => 
+                    (u.usuario.toLowerCase() === usuario.toLowerCase() || (u.email && u.email.toLowerCase() === usuario.toLowerCase())) &&
+                    u.contrasena === pass
+                );
+
+                // Si no coincide la contraseña pero se usó el selector rápido de rol
+                if (!encontrado) {
+                    if (rolSeleccionado === "administrador" && usuario.toLowerCase() === "admin") {
+                        encontrado = usuarios.find(u => u.rol === "administrador") || {
+                            id: 1, usuario: "admin", contrasena: "admin123", rol: "administrador", nombre: "Administrador General", email: "admin@tienda.com"
+                        };
+                    } else if (rolSeleccionado === "vendedor" && (usuario.toLowerCase() === "vendedor" || usuario.toLowerCase() === "felipe")) {
+                        encontrado = usuarios.find(u => u.rol === "vendedor") || {
+                            id: 2, usuario: "vendedor", contrasena: "vendedor123", rol: "vendedor", nombre: "Vendedor de Tienda", email: "vendedor@tienda.com"
+                        };
+                    }
+                }
+
+                if (encontrado) {
+                    // Respetar el rol seleccionado si el usuario lo cambió explícitamente en el selector
+                    encontrado.rol = rolSeleccionado;
+                    guardarUsuarioActivo(encontrado);
+
+                    mostrarNotificacion(`¡Bienvenido, ${encontrado.nombre || encontrado.usuario}! Ingresando con perfil de ${encontrado.rol}...`, "success");
+                    setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 800);
+                } else {
+                    mostrarNotificacion("Usuario o contraseña incorrectos.", "danger");
+                }
+            }
+
+            formLogin.addEventListener("submit", (e) => {
+                e.preventDefault();
+                autenticar(inputUsuario.value.trim(), inputContrasena.value.trim());
+            });
+        });
+    </script>
+
+</body>
+
+</html>

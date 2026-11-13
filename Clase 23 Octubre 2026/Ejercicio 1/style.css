@@ -1,0 +1,13 @@
+/* Estilos personalizados para la clase de localStorage */
+body {
+    background-color: #f8f9fa;
+}
+
+table th, table td {
+    vertical-align: middle;
+}
+
+.table img {
+    border-radius: 6px;
+    object-fit: cover;
+}

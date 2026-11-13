@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin - Crear Pedido</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Tienda</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Módulos
+            </div>
+
+            <!-- Nav Item - Productos -->
+            <li class="nav-item" id="nav-item-productos">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProductos"
+                    aria-expanded="false" aria-controls="collapseProductos">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Productos</span>
+                </a>
+                <div id="collapseProductos" class="collapse" aria-labelledby="headingProductos" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-pro.html">Ver Productos</a>
+                        <a class="collapse-item" href="crear-pro.html">Crear Productos</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Clientes -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClientes"
+                    aria-expanded="false" aria-controls="collapseClientes">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Clientes</span>
+                </a>
+                <div id="collapseClientes" class="collapse" aria-labelledby="headingClientes" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-clientes.html">Ver Clientes</a>
+                        <a class="collapse-item" href="crear-cliente.html">Crear Clientes</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pedidos -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePedidos"
+                    aria-expanded="true" aria-controls="collapsePedidos">
+                    <i class="fas fa-fw fa-shopping-cart"></i>
+                    <span>Pedidos</span>
+                </a>
+                <div id="collapsePedidos" class="collapse show" aria-labelledby="headingPedidos" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-pedidos.html">Ver Pedidos</a>
+                        <a class="collapse-item active" href="crear-pedido.html">Crear Pedidos</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Usuarios -->
+            <li class="nav-item" id="nav-item-usuarios">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsuarios"
+                    aria-expanded="false" aria-controls="collapseUsuarios">
+                    <i class="fas fa-fw fa-user-tie"></i>
+                    <span>Usuarios</span>
+                </a>
+                <div id="collapseUsuarios" class="collapse" aria-labelledby="headingUsuarios" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-usuarios.html">Ver Usuarios</a>
+                        <a class="collapse-item" href="crear-usuario.html">Crear Usuarios</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                        
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="listado-usuarios.html">
+                                    <i class="fas fa-users-cog fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Gestión de Usuarios
+                                </a>
+                                <a class="dropdown-item" href="../front/index.html" target="_blank">
+                                    <i class="fas fa-store fa-sm fa-fw mr-2 text-success"></i>
+                                    Ir a la Tienda Online
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="login.html" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-danger"></i>
+                                    Cerrar Sesión / Cambiar Rol
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800" id="titulo-pagina-ped">Crear Pedido</h1>
+                        <a href="listado-pedidos.html" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-list fa-sm text-white-50"></i> Ver Listado de Pedidos </a>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary" id="subtitulo-card-ped">Detalles del Nuevo Pedido</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form id="formulario-pedido">
+                                        <input type="hidden" id="id-pedido-editar" value="">
+                                  
+                                        <!-- Cliente select -->
+                                        <div class="form-group mb-3">
+                                            <label class="form-label font-weight-bold" for="id_cliente">Cliente *</label>
+                                            <select id="id_cliente" class="form-control" required>
+                                                <option value="" selected>-- Seleccionar Cliente --</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Método de pago select -->
+                                        <div class="form-group mb-3">
+                                            <label class="form-label font-weight-bold" for="metodo_pago">Método de Pago *</label>
+                                            <select id="metodo_pago" class="form-control" required>
+                                                <option value="Contraentrega" selected>Contraentrega (Efectivo)</option>
+                                                <option value="PSE">PSE (Débito en línea)</option>
+                                                <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                                                <option value="Transferencia">Transferencia Bancaria</option>
+                                                <option value="Nequi">Nequi / Daviplata</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Estado del pedido (visible especialmente al editar) -->
+                                        <div class="form-group mb-3" id="grupo-estado-pedido">
+                                            <label class="form-label font-weight-bold d-flex align-items-center justify-content-between" for="estado_pedido"><span>Estado del Pedido</span><span id="badge-estado-preview"></span></label>
+                                            <select id="estado_pedido" class="form-control">
+                                                <option value="Pendiente" selected>Pendiente</option>
+                                                <option value="En preparación">En preparación</option>
+                                                <option value="En camino">En camino</option>
+                                                <option value="Entregado">Entregado</option>
+                                                <option value="Cancelado">Cancelado</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Selector para agregar productos al pedido -->
+                                        <div class="card bg-light border p-3 mb-4">
+                                            <h6 class="font-weight-bold text-dark mb-2"><i class="fas fa-cart-plus mr-1 text-primary"></i> Agregar Productos al Pedido</h6>
+                                            <div class="row align-items-end">
+                                                <div class="col-md-6 mb-2 mb-md-0">
+                                                    <label class="small font-weight-bold mb-1">Producto Disponible:</label>
+                                                    <select id="select-producto-agregar" class="form-control">
+                                                        <option value="">-- Seleccionar Producto --</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3 mb-2 mb-md-0">
+                                                    <label class="small font-weight-bold mb-1">Cantidad:</label>
+                                                    <input type="number" id="input-cantidad-agregar" class="form-control" value="1" min="1" />
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button type="button" id="btn-agregar-producto-item" class="btn btn-primary btn-block">
+                                                        <i class="fas fa-plus mr-1"></i> Agregar
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Productos carrito -->
+                                        <div class="mb-4">
+                                            <h6 class="font-weight-bold text-dark mb-2">Artículos en el Pedido</h6>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-sm align-middle" id="tabla-carrito">
+                                                    <thead class="thead-light">
+                                                        <tr>
+                                                            <th>Producto</th>
+                                                            <th style="width: 100px;">Precio</th>
+                                                            <th style="width: 110px;">Cantidad</th>
+                                                            <th style="width: 110px;">Subtotal</th>
+                                                            <th style="width: 60px;" class="text-center">Quitar</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="cuerpo-tabla-carrito">
+                                                        <tr>
+                                                            <td colspan="5" class="text-center py-3 text-muted">Aún no has agregado productos a este pedido.</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <!-- Descuento input -->
+                                                <div class="form-group mb-3">
+                                                    <label class="form-label font-weight-bold" for="descuento">Descuento ($)</label>
+                                                    <input type="number" id="descuento" class="form-control" value="0" min="0" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <!-- Aumento input -->
+                                                <div class="form-group mb-3">
+                                                    <label class="form-label font-weight-bold" for="aumento">Aumento / Envío ($)</label>
+                                                    <input type="number" id="aumento" class="form-control" value="0" min="0" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Total display -->
+                                        <div class="alert alert-info d-flex justify-content-between align-items-center p-3 mb-4" role="alert">
+                                            <span class="font-weight-bold h5 mb-0">Total a Pagar:</span>
+                                            <span class="font-weight-bold h4 mb-0 text-primary" id="total-pedido">$0</span>
+                                        </div>
+                                    
+                                        <!-- Submit button -->
+                                        <button type="submit" id="btn-submit-ped" class="btn btn-primary btn-block py-2 font-weight-bold shadow-sm">
+                                            <i class="fas fa-check-circle mr-1"></i> Guardar Pedido
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Tienda de Comidas 2026</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/db.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const selectCliente = document.querySelector("#id_cliente");
+            const selectMetodoPago = document.querySelector("#metodo_pago");
+            const selectEstado = document.querySelector("#estado_pedido");
+            const selectProducto = document.querySelector("#select-producto-agregar");
+            const inputCantidad = document.querySelector("#input-cantidad-agregar");
+            const btnAgregarItem = document.querySelector("#btn-agregar-producto-item");
+            const cuerpoCarrito = document.querySelector("#cuerpo-tabla-carrito");
+            const inputDescuento = document.querySelector("#descuento");
+            const inputAumento = document.querySelector("#aumento");
+            const spanTotal = document.querySelector("#total-pedido");
+            const formPedido = document.querySelector("#formulario-pedido");
+            const inputIdEditar = document.querySelector("#id-pedido-editar");
+            const tituloPagina = document.querySelector("#titulo-pagina-ped");
+            const btnSubmit = document.querySelector("#btn-submit-ped");
+
+            let itemsPedido = [];
+
+            // 1. Cargar lista de clientes en el select
+            function cargarClientes(clienteSeleccionadoId = null) {
+                const clientes = obtenerClientes();
+                selectCliente.innerHTML = `<option value="">-- Seleccionar Cliente --</option>`;
+                clientes.forEach(c => {
+                    const opt = document.createElement("option");
+                    opt.value = c.id;
+                    opt.textContent = `${c.nombre} ${c.apellido} (${c.email}) - Cel: ${c.celular}`;
+                    if (clienteSeleccionadoId && c.id == clienteSeleccionadoId) {
+                        opt.selected = true;
+                    }
+                    selectCliente.appendChild(opt);
+                });
+            }
+
+            // 2. Cargar productos en el select de agregar
+            function cargarProductosSelect() {
+                const productos = obtenerProductos();
+                selectProducto.innerHTML = `<option value="">-- Seleccionar Producto --</option>`;
+                productos.forEach(p => {
+                    const opt = document.createElement("option");
+                    opt.value = p.id;
+                    opt.textContent = `${p.nombre} - ${formatearMoneda(p.precio)} (Stock: ${p.stock})`;
+                    opt.setAttribute("data-precio", p.precio);
+                    opt.setAttribute("data-nombre", p.nombre);
+                    opt.setAttribute("data-stock", p.stock);
+                    opt.setAttribute("data-imagen", p.imagen);
+                    selectProducto.appendChild(opt);
+                });
+            }
+
+            // 3. Renderizar tabla de productos del pedido y recalcular total
+            function renderizarItemsCarrito() {
+                cuerpoCarrito.innerHTML = "";
+
+                if (itemsPedido.length === 0) {
+                    cuerpoCarrito.innerHTML = `
+                        <tr>
+                            <td colspan="5" class="text-center py-3 text-muted">Aún no has agregado productos a este pedido.</td>
+                        </tr>
+                    `;
+                    calcularTotal();
+                    return;
+                }
+
+                itemsPedido.forEach((item, index) => {
+                    const subtotal = item.precio * item.cantidad;
+                    const tr = document.createElement("tr");
+                    tr.innerHTML = `
+                        <td>
+                            <strong>${item.nombre}</strong>
+                        </td>
+                        <td>${formatearMoneda(item.precio)}</td>
+                        <td>
+                            <div class="input-group input-group-sm" style="max-width: 100px;">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-outline-secondary btn-menos" type="button" data-index="${index}">-</button>
+                                </div>
+                                <input type="number" class="form-control text-center input-cant-item" value="${item.cantidad}" min="1" data-index="${index}">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary btn-mas" type="button" data-index="${index}">+</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="font-weight-bold text-dark">${formatearMoneda(subtotal)}</td>
+                        <td class="text-center">
+                            <button type="button" class="btn btn-danger btn-sm py-0 px-2 btn-quitar-item" data-index="${index}" title="Quitar">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </td>
+                    `;
+                    cuerpoCarrito.appendChild(tr);
+                });
+
+                calcularTotal();
+            }
+
+            // 4. Calcular total global del pedido
+            function calcularTotal() {
+                const subtotalProductos = itemsPedido.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+                const desc = parseFloat(inputDescuento.value) || 0;
+                const aum = parseFloat(inputAumento.value) || 0;
+                const totalFinal = Math.max(0, subtotalProductos - desc + aum);
+
+                spanTotal.textContent = formatearMoneda(totalFinal);
+                return totalFinal;
+            }
+
+            // 5. Eventos de la tabla de items
+            cuerpoCarrito.addEventListener("click", (e) => {
+                const btnQuitar = e.target.closest(".btn-quitar-item");
+                const btnMas = e.target.closest(".btn-mas");
+                const btnMenos = e.target.closest(".btn-menos");
+
+                if (btnQuitar) {
+                    const idx = parseInt(btnQuitar.getAttribute("data-index"));
+                    itemsPedido.splice(idx, 1);
+                    renderizarItemsCarrito();
+                } else if (btnMas) {
+                    const idx = parseInt(btnMas.getAttribute("data-index"));
+                    itemsPedido[idx].cantidad += 1;
+                    renderizarItemsCarrito();
+                } else if (btnMenos) {
+                    const idx = parseInt(btnMenos.getAttribute("data-index"));
+                    if (itemsPedido[idx].cantidad > 1) {
+                        itemsPedido[idx].cantidad -= 1;
+                        renderizarItemsCarrito();
+                    } else {
+                        itemsPedido.splice(idx, 1);
+                        renderizarItemsCarrito();
+                    }
+                }
+            });
+
+            cuerpoCarrito.addEventListener("change", (e) => {
+                const inputCant = e.target.closest(".input-cant-item");
+                if (inputCant) {
+                    const idx = parseInt(inputCant.getAttribute("data-index"));
+                    const val = parseInt(inputCant.value) || 1;
+                    itemsPedido[idx].cantidad = Math.max(1, val);
+                    renderizarItemsCarrito();
+                }
+            });
+
+            // 6. Agregar producto al pedido
+            btnAgregarItem.addEventListener("click", () => {
+                const prodId = selectProducto.value;
+                if (!prodId) {
+                    mostrarNotificacion("Por favor selecciona un producto para agregar.", "danger");
+                    return;
+                }
+
+                const optSeleccionada = selectProducto.options[selectProducto.selectedIndex];
+                const nombre = optSeleccionada.getAttribute("data-nombre");
+                const precio = parseFloat(optSeleccionada.getAttribute("data-precio")) || 0;
+                const imagen = optSeleccionada.getAttribute("data-imagen") || "";
+                const cantidad = parseInt(inputCantidad.value) || 1;
+
+                const existente = itemsPedido.find(it => it.id == prodId);
+                if (existente) {
+                    existente.cantidad += cantidad;
+                } else {
+                    itemsPedido.push({
+                        id: prodId,
+                        nombre: nombre,
+                        precio: precio,
+                        cantidad: cantidad,
+                        imagen: imagen
+                    });
+                }
+
+                inputCantidad.value = 1;
+                selectProducto.value = "";
+                renderizarItemsCarrito();
+                mostrarNotificacion(`"${nombre}" añadido al pedido.`, "success");
+            });
+
+            // Escuchar cambios en descuento o aumento
+            inputDescuento.addEventListener("input", calcularTotal);
+            inputAumento.addEventListener("input", calcularTotal);
+
+            // 7. Modo Edición si ?id=X en URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const idEditar = urlParams.get('id');
+
+            cargarClientes();
+            cargarProductosSelect();
+
+            if (idEditar) {
+                const pedidos = obtenerPedidos();
+                const pedido = pedidos.find(p => p.id == idEditar);
+
+                if (pedido) {
+                    inputIdEditar.value = pedido.id;
+                    cargarClientes(pedido.idCliente);
+                    selectMetodoPago.value = pedido.metodoPago || "Contraentrega";
+                    selectEstado.value = pedido.estado || "Pendiente";
+                    actualizarPreviewBadgeEstado();
+                    itemsPedido = pedido.productos ? JSON.parse(JSON.stringify(pedido.productos)) : [];
+
+                    if (pedido.resumen) {
+                        inputDescuento.value = pedido.resumen.promo || 0;
+                        inputAumento.value = pedido.resumen.valorDomi || 0;
+                    }
+
+                    tituloPagina.textContent = `Editar Pedido #${pedido.numeroOrden || pedido.id}`;
+                    btnSubmit.innerHTML = `<i class="fas fa-check-circle mr-1"></i> Actualizar Pedido`;
+                    btnSubmit.className = "btn btn-success btn-block py-2 font-weight-bold shadow-sm";
+                    renderizarItemsCarrito();
+                }
+            }
+
+            // 8. Enviar formulario (Crear o Actualizar)
+            
+            const previewBadgeEstado = document.querySelector("#badge-estado-preview");
+            function actualizarPreviewBadgeEstado() {
+                if (previewBadgeEstado && selectEstado) {
+                    previewBadgeEstado.innerHTML = obtenerBadgeEstadoHtml(selectEstado.value);
+                }
+            }
+            if (selectEstado) {
+                selectEstado.addEventListener("change", actualizarPreviewBadgeEstado);
+                actualizarPreviewBadgeEstado();
+            }
+    
+
+            formPedido.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                if (!selectCliente.value) {
+                    mostrarNotificacion("Debes seleccionar un cliente para el pedido.", "danger");
+                    return;
+                }
+
+                if (itemsPedido.length === 0) {
+                    mostrarNotificacion("Debes agregar al menos un producto al pedido.", "danger");
+                    return;
+                }
+
+                const clientes = obtenerClientes();
+                const clienteObj = clientes.find(c => c.id == selectCliente.value) || {
+                    nombre: "Cliente General", apellido: "", email: "", celular: "", direccion: ""
+                };
+
+                const pedidos = obtenerPedidos();
+                const totalFinal = calcularTotal();
+                const desc = parseFloat(inputDescuento.value) || 0;
+                const aum = parseFloat(inputAumento.value) || 0;
+                const subtotal = itemsPedido.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+                const idActual = inputIdEditar.value;
+
+                if (idActual) {
+                    // Modo Edición
+                    const index = pedidos.findIndex(p => p.id == idActual);
+                    if (index !== -1) {
+                        pedidos[index].idCliente = selectCliente.value;
+                        pedidos[index].cliente = {
+                            nombres: clienteObj.nombre,
+                            apellidos: clienteObj.apellido,
+                            email: clienteObj.email,
+                            celular: clienteObj.celular,
+                            direccion: clienteObj.direccion
+                        };
+                        pedidos[index].productos = itemsPedido;
+                        pedidos[index].metodoPago = selectMetodoPago.value;
+                        pedidos[index].estado = selectEstado.value;
+                        pedidos[index].total = totalFinal;
+                        pedidos[index].resumen = {
+                            subtotal: subtotal,
+                            promo: desc,
+                            valorDomi: aum,
+                            metodoPago: selectMetodoPago.value,
+                            totalFinal: totalFinal
+                        };
+
+                        guardarPedidos(pedidos);
+                        mostrarNotificacion(`Pedido #${pedidos[index].numeroOrden || idActual} actualizado correctamente.`, "success");
+                        setTimeout(() => {
+                            window.location.href = "listado-pedidos.html";
+                        }, 1000);
+                    }
+                } else {
+                    // Modo Creación
+                    const nuevoId = pedidos.length > 0 ? Math.max(...pedidos.map(p => Number(p.id) || 0)) + 1 : 1;
+                    const numeroOrden = "#" + Math.floor(100000 + Math.random() * 900000);
+                    const fechaActual = new Date().toLocaleDateString("es-CO", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                        hour: "2-digit",
+                        minute: "2-digit"
+                    });
+
+                    const nuevoPedido = {
+                        id: nuevoId,
+                        numeroOrden: numeroOrden,
+                        fecha: fechaActual,
+                        idCliente: selectCliente.value,
+                        cliente: {
+                            nombres: clienteObj.nombre,
+                            apellidos: clienteObj.apellido,
+                            email: clienteObj.email,
+                            celular: clienteObj.celular,
+                            direccion: clienteObj.direccion
+                        },
+                        productos: itemsPedido,
+                        metodoPago: selectMetodoPago.value,
+                        estado: selectEstado.value,
+                        total: totalFinal,
+                        resumen: {
+                            subtotal: subtotal,
+                            promo: desc,
+                            valorDomi: aum,
+                            metodoPago: selectMetodoPago.value,
+                            totalFinal: totalFinal
+                        }
+                    };
+
+                    // Descontar inventario / stock en productos
+                    const productosActuales = obtenerProductos();
+                    itemsPedido.forEach(it => {
+                        const pIdx = productosActuales.findIndex(p => p.id == it.id);
+                        if (pIdx !== -1) {
+                            productosActuales[pIdx].stock = Math.max(0, productosActuales[pIdx].stock - it.cantidad);
+                        }
+                    });
+                    guardarProductos(productosActuales);
+
+                    pedidos.unshift(nuevoPedido);
+                    guardarPedidos(pedidos);
+
+                    mostrarNotificacion(`¡Pedido ${numeroOrden} registrado con éxito!`, "success");
+                    setTimeout(() => {
+                        window.location.href = "listado-pedidos.html";
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

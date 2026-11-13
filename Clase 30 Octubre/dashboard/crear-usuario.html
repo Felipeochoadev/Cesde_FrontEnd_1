@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UACompatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Admin - Crear Usuario</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Tienda</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Módulos
+            </div>
+
+            <!-- Nav Item - Productos -->
+            <li class="nav-item" id="nav-item-productos">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProductos"
+                    aria-expanded="false" aria-controls="collapseProductos">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Productos</span>
+                </a>
+                <div id="collapseProductos" class="collapse" aria-labelledby="headingProductos" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-pro.html">Ver Productos</a>
+                        <a class="collapse-item" href="crear-pro.html">Crear Productos</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Clientes -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClientes"
+                    aria-expanded="false" aria-controls="collapseClientes">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Clientes</span>
+                </a>
+                <div id="collapseClientes" class="collapse" aria-labelledby="headingClientes" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-clientes.html">Ver Clientes</a>
+                        <a class="collapse-item" href="crear-cliente.html">Crear Clientes</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pedidos -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePedidos"
+                    aria-expanded="false" aria-controls="collapsePedidos">
+                    <i class="fas fa-fw fa-shopping-cart"></i>
+                    <span>Pedidos</span>
+                </a>
+                <div id="collapsePedidos" class="collapse" aria-labelledby="headingPedidos" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-pedidos.html">Ver Pedidos</a>
+                        <a class="collapse-item" href="crear-pedido.html">Crear Pedidos</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Usuarios -->
+            <li class="nav-item" id="nav-item-usuarios">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsuarios"
+                    aria-expanded="true" aria-controls="collapseUsuarios">
+                    <i class="fas fa-fw fa-user-tie"></i>
+                    <span>Usuarios</span>
+                </a>
+                <div id="collapseUsuarios" class="collapse show" aria-labelledby="headingUsuarios" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Acciones:</h6>
+                        <a class="collapse-item" href="listado-usuarios.html">Ver Usuarios</a>
+                        <a class="collapse-item active" href="crear-usuario.html">Crear Usuarios</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                        </li>
+
+                        <!-- Nav Item - Messages -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                        </li>
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                        
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="listado-usuarios.html">
+                                    <i class="fas fa-users-cog fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Gestión de Usuarios
+                                </a>
+                                <a class="dropdown-item" href="../front/index.html" target="_blank">
+                                    <i class="fas fa-store fa-sm fa-fw mr-2 text-success"></i>
+                                    Ir a la Tienda Online
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="login.html" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-danger"></i>
+                                    Cerrar Sesión / Cambiar Rol
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800" id="titulo-pagina-usr">Crear Usuario</h1>
+                        <a href="listado-usuarios.html" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-list fa-sm text-white-50"></i> Ver Listado de Usuarios </a>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary" id="subtitulo-card-usr">Datos del Usuario</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form id="formulario-usuario">
+                                        <input type="hidden" id="id-usuario-editar" value="">
+                                  
+                                        <!-- Rol select -->
+                                        <div class="form-group mb-3">
+                                            <label class="form-label font-weight-bold" for="rol">Rol del Usuario *</label>
+                                            <select id="rol" class="form-control" required>
+                                                <option value="" disabled>-- Seleccionar Rol --</option>
+                                                <option value="vendedor" selected>Vendedor (Crear, Extraer y Editar)</option>
+                                                <option value="administrador">Administrador (Control Total + Eliminar)</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Nombre completo input -->
+                                        <div class="form-group mb-3">
+                                            <label class="form-label font-weight-bold" for="nombre_completo">Nombre Completo *</label>
+                                            <input type="text" id="nombre_completo" class="form-control" placeholder="Ej: Luis Ochoa" required />
+                                        </div>
+
+                                        <!-- Email input -->
+                                        <div class="form-group mb-3">
+                                            <label class="form-label font-weight-bold" for="email_usuario">Correo Electrónico *</label>
+                                            <input type="email" id="email_usuario" class="form-control" placeholder="usuario@tienda.com" required />
+                                        </div>
+
+                                        <!-- Usuario input -->
+                                        <div class="form-group mb-3">
+                                            <label class="form-label font-weight-bold" for="usuario">Nombre de Usuario (Login) *</label>
+                                            <input type="text" id="usuario" class="form-control" placeholder="Ej: luisshop" required />
+                                        </div>
+            
+                                        <!-- Contraseña input -->
+                                        <div class="form-group mb-3">
+                                            <label class="form-label font-weight-bold" for="contrasena">Contraseña *</label>
+                                            <input type="password" id="contrasena" class="form-control" placeholder="••••••••" required />
+                                            <small class="form-text text-muted" id="nota-pass-edit" style="display:none;">Deja este campo igual si no deseas cambiar la contraseña.</small>
+                                        </div>
+
+                                        <!-- Confirmar contraseña input -->
+                                        <div class="form-group mb-4">
+                                            <label class="form-label font-weight-bold" for="confirmar_contrasena">Confirmar Contraseña *</label>
+                                            <input type="password" id="confirmar_contrasena" class="form-control" placeholder="••••••••" required />
+                                        </div>
+                                    
+                                        <!-- Submit button -->
+                                        <button type="submit" id="btn-submit-usr" class="btn btn-primary btn-block py-2 font-weight-bold shadow-sm">
+                                            <i class="fas fa-user-plus mr-1"></i> Guardar Usuario
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Tienda de Comidas 2026</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/db.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const usuarioActivo = obtenerUsuarioActivo();
+            if (usuarioActivo && usuarioActivo.rol === "vendedor") return;
+            const formUsuario = document.querySelector("#formulario-usuario");
+            const inputId = document.querySelector("#id-usuario-editar");
+            const selectRol = document.querySelector("#rol");
+            const inputNombre = document.querySelector("#nombre_completo");
+            const inputEmail = document.querySelector("#email_usuario");
+            const inputUsuario = document.querySelector("#usuario");
+            const inputContrasena = document.querySelector("#contrasena");
+            const inputConfirmar = document.querySelector("#confirmar_contrasena");
+            const notaPass = document.querySelector("#nota-pass-edit");
+            const tituloPagina = document.querySelector("#titulo-pagina-usr");
+            const subtituloCard = document.querySelector("#subtitulo-card-usr");
+            const btnSubmit = document.querySelector("#btn-submit-usr");
+
+            // Modo Edición por URL (?id=X)
+            const urlParams = new URLSearchParams(window.location.search);
+            const idEditar = urlParams.get('id');
+
+            if (idEditar) {
+                const usuarios = obtenerUsuarios();
+                const usr = usuarios.find((u, idx) => u.id == idEditar || (idx + 1) == idEditar);
+
+                if (usr) {
+                    inputId.value = usr.id;
+                    selectRol.value = (usr.rol || "vendedor").toLowerCase();
+                    inputNombre.value = usr.nombre || usr.usuario;
+                    inputEmail.value = usr.email || "";
+                    inputUsuario.value = usr.usuario;
+                    inputContrasena.value = usr.contrasena || "";
+                    inputConfirmar.value = usr.contrasena || "";
+
+                    notaPass.style.display = "block";
+                    tituloPagina.textContent = `Editar Usuario #${usr.id}`;
+                    subtituloCard.textContent = `Editando: ${usr.usuario} (${usr.rol || 'vendedor'})`;
+                    btnSubmit.innerHTML = `<i class="fas fa-check mr-1"></i> Actualizar Usuario`;
+                    btnSubmit.className = "btn btn-success btn-block py-2 font-weight-bold shadow-sm";
+                }
+            }
+
+            // Procesar formulario
+            formUsuario.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                if (inputContrasena.value !== inputConfirmar.value) {
+                    mostrarNotificacion("Las contraseñas no coinciden. Por favor verifícalas.", "danger");
+                    return;
+                }
+
+                if (inputContrasena.value.length < 4) {
+                    mostrarNotificacion("La contraseña debe tener al menos 4 caracteres.", "danger");
+                    return;
+                }
+
+                const usuarios = obtenerUsuarios();
+                const idActual = inputId.value;
+
+                if (idActual) {
+                    // Modo Edición
+                    const index = usuarios.findIndex(u => u.id == idActual);
+                    if (index !== -1) {
+                        // Verificar que no repita el nombre de usuario con otro usuario diferente
+                        const repetido = usuarios.find(u => u.id != idActual && u.usuario.toLowerCase() === inputUsuario.value.trim().toLowerCase());
+                        if (repetido) {
+                            mostrarNotificacion("Ese nombre de usuario ya está en uso por otro registro.", "danger");
+                            return;
+                        }
+
+                        usuarios[index].rol = selectRol.value;
+                        usuarios[index].nombre = inputNombre.value.trim();
+                        usuarios[index].email = inputEmail.value.trim();
+                        usuarios[index].usuario = inputUsuario.value.trim();
+                        usuarios[index].contrasena = inputContrasena.value;
+
+                        guardarUsuarios(usuarios);
+
+                        // Si el usuario editado es el mismo que tiene la sesión abierta, actualizar datos de sesión
+                        const usuarioActivo = obtenerUsuarioActivo();
+                        if (usuarioActivo && usuarioActivo.id == idActual) {
+                            guardarUsuarioActivo(usuarios[index]);
+                        }
+
+                        mostrarNotificacion(`Usuario "${inputUsuario.value}" actualizado exitosamente.`, "success");
+                        setTimeout(() => {
+                            window.location.href = "listado-usuarios.html";
+                        }, 1000);
+                    }
+                } else {
+                    // Modo Creación
+                    const repetido = usuarios.find(u => u.usuario.toLowerCase() === inputUsuario.value.trim().toLowerCase());
+                    if (repetido) {
+                        mostrarNotificacion("El nombre de usuario ya existe. Por favor elige otro.", "danger");
+                        return;
+                    }
+
+                    const nuevoId = usuarios.length > 0 ? Math.max(...usuarios.map(u => Number(u.id) || 0)) + 1 : 1;
+                    const nuevoUsuario = {
+                        id: nuevoId,
+                        rol: selectRol.value,
+                        nombre: inputNombre.value.trim(),
+                        email: inputEmail.value.trim(),
+                        usuario: inputUsuario.value.trim(),
+                        contrasena: inputContrasena.value,
+                        creado: new Date().toISOString().split("T")[0]
+                    };
+
+                    usuarios.push(nuevoUsuario);
+                    guardarUsuarios(usuarios);
+
+                    mostrarNotificacion(`¡Usuario "${nuevoUsuario.usuario}" creado exitosamente!`, "success");
+                    setTimeout(() => {
+                        window.location.href = "listado-usuarios.html";
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
